@@ -1,0 +1,4 @@
+User interface requirements (Initial page elements, Subpage elements)
+User resource management requirements (starting|ending balance on d/w/m basis; transaction log w. filter on d/w/m basis) 
+User task management requirements (sequence, priority)
+System log for updates: creations and alterations.
