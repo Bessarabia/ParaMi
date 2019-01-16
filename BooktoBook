@@ -1,0 +1,12 @@
+import java.io.*;
+import java.util.*;
+import java.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class BooktoBook{
+  
+  public static void main(String{} args) throws Exception {
+    try {
+      FileInputstream file = new FileInputStream(new File (pathname: "\\documents\\workbook.xlsx"));
+      XSSFWorkbook workbook = new XSSFWorkbook(file);
