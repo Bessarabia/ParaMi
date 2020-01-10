@@ -1,0 +1,61 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
+public class verbs {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+/* 0)есть массив неправильных глаголов:
+ * глагол - это класс стрингового объекта,
+ * его инфинитив - это название объекта,
+ * у него ещё есть прошедшая форма и форма страдательного залога - тоже стринги.        
+*/
+        final class Verb {
+            String verb;
+            String past;
+            String perfect;
+            public Verb(String verb, String past, String perfect) {
+                this.verb = verb;
+                this.past = past;
+                this.perfect = perfect;
+            }    
+        }
+        ArrayList<Verb> Verbs = new ArrayList<Verb>();
+        Verb take = new Verb("take", "took","taken");
+        Verb win = new Verb("win","won","won");
+        Verbs.add(take);
+        Verbs.add(win);
+        Verbs.add(new Verb("shake", "shook","shaken"));
+        Verbs.add(new Verb("make", "made", "made"));
+        Verbs.add(new Verb("meet", "met", "met"));
+        Verbs.add(new Verb("bring", "brought", "brought"));
+        Verbs.add(new Verb("fight", "fought", "fought"));
+        Verbs.add(new Verb("teach", "taught", "taught"));
+      
+        Reader r = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(r);
+        for(int i = 0; i< Verbs.size(); i++) {
+            System.out.println("Please enter the past form of the verb \'" + Verbs.get(i).verb+"\' and hit \'Enter\'");
+            try {
+                String s = reader.readLine();
+                if(s.equals(Verbs.get(i).past)) {System.out.println("Correct.");}
+                else {System.out.println("Sorry, sorry... The right form is \'" + Verbs.get(i).past + "\'");}
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            System.out.println("Please enter the perfect form of the verb \'" + Verbs.get(i).verb+"\' and hit \'Enter\'");
+            try {
+                String s = reader.readLine();
+                if(s.equals(Verbs.get(i).perfect)) {System.out.println("Correct.");}
+                else {System.out.println("Sorry, sorry... The right form is \'" + Verbs.get(i).perfect + "\'");}
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }        
+        System.out.println("That's enough, so far...");
+
+    }
+}
